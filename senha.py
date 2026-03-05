@@ -1,27 +1,26 @@
 senha = input("Digite a senha: ")
 
 tem_maiuscula = False
-
 tem_minuscula = False
-
 tem_numero = False
-
 tem_especial = False
 
-for i in senha:  
+caracteres_especiais = "!@#$%&*()-_=+[]{};:,.?/"
+
+for i in senha:
     if i.isupper():
         tem_maiuscula = True
     elif i.islower():
         tem_minuscula = True
     elif i.isdigit():
         tem_numero = True
-    elif i in string.punctuation:
+    elif i in caracteres_especiais:
         tem_especial = True
 
 if len(senha) < 8:
     print("Senha inválida. A senha deve ter pelo menos 8 caracteres!")
 
-if tem_maiuscula == False:
+elif tem_maiuscula == False:
     print("Senha inválida. A senha deve ter pelo menos uma letra maiúscula!")
 
 elif tem_minuscula == False:
